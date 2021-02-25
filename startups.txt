@@ -1,0 +1,24 @@
+test script
+
+#startups
+
+test_scripts:
+
+                      what = 'tech based startup',
+                      why = 'for making you rich',
+                      how = 'we are the best',
+                      
+
+add investor api
+
+	what = request.form['what']
+        why = request.form['why']
+        how = request.form['how']
+        
+
+database model 
+string:
+what 
+why
+how
+business model
