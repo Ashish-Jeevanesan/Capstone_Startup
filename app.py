@@ -4,7 +4,7 @@ from sqlalchemy import Column, Integer, String, Float
 import os
 from flask_marshmallow import Marshmallow
 
-from flask_jwt_extended import JWTManager, jwt_required, create_access_token
+#from flask_jwt_extended import JWTManager, jwt_required, create_access_token
 '''
 from flask_mail import Mail, Message
 '''
@@ -25,7 +25,7 @@ app.config['MAIL_PASSWORD'] = os.environ['MAIL_PASSWORD']
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
-jwt = JWTManager(app)
+#jwt = JWTManager(app)
 '''
 mail = Mail(app)
 '''
@@ -44,11 +44,7 @@ def db_drop():
 
 @app.cli.command('db_seed')
 def db_seed():
- main
     t_start1 = sDetails(strtup_name='Aria Travel',
-=======
-    t_start1 = iDetails(strtup_name='Aria Travel',
-
                       foundr_name='Aashay',
                       cofoundr_name='Aakarsh',
                       amnt_raised=12365.12,
@@ -57,26 +53,10 @@ def db_seed():
                       eqty_prop=234.23,
                       dt_establish=20092020,
                       approved=True,
-
-=======
-                      '''interested_investing='something',
- main
-                      role='founder','''
                       strtup_logo='image',
                       business_model= 'travel is life',
                       business_desc= 'travel made easy',
-                      '''invested_companies='tech',
-                      list_of_companies='tech1',
-                      # kyc upload files
-                      Adhar_card_front='adharfront',
-                      Adhar_card_back='adharback',
-                      pan='pan card',
-                      bank_Statement='bank statement'
-
-                      
-=======
-                      '''
-                      inv_note= 'the next big thing',
+                    inv_note= 'the next big thing',
                       balanc_sheet= 'upload file',
                       fin_details= 'upload file',
                       inv_pitch= 'upload file'
@@ -98,12 +78,12 @@ def db_seed():
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return 'Hello Startup!'
 
 
 @app.route('/super_simple')
 def super_simple():
-    return jsonify(message='Hello from the Investry API.'), 200
+    return jsonify(message='Hello from the Startup API.'), 200
 
 
 @app.route('/not_found')
@@ -314,7 +294,7 @@ class sDetails(db.Model):
     no_of_members = Column(Integer)
     eqty_prop = Column(Float)
     dt_establish = Column(Float)
-    approved = Column(Boolean, default=False)
+    approved = Column(String)
 
     role = Column(String)
     #file upload
