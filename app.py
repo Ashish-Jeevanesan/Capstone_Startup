@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Column, Integer, String, Float, Boolean
+from sqlalchemy import Column, Integer, String, Float
 import os
 from flask_marshmallow import Marshmallow
 '''
@@ -42,30 +42,41 @@ def db_drop():
 
 @app.cli.command('db_seed')
 def db_seed():
-    t_start1 = iDetails(strtup_name='human',
-                      foundr_name='tech',
+    t_start1 = iDetails(strtup_name='Aria Travel',
+                      foundr_name='Aashay',
+                      cofoundr_name='Aakarsh',
                       amnt_raised=12365.12,
+                      amnt_needed=250000.54,
                       no_of_members=3,
                       eqty_prop=234.23,
-                      interested_investing='something',
-                      role='founder',
+                      dt_establish=20092020,
+                      approved=True,
+                      '''interested_investing='something',
+                      role='founder','''
                       strtup_logo='image',
-                      invested_companies='tech',
+                      business_model= 'travel is life',
+                      business_desc= 'travel made easy',
+                      '''invested_companies='tech',
                       list_of_companies='tech1',
                       # kyc upload files
                       Adhar_card_front='adharfront',
                       Adhar_card_back='adharback',
                       pan='pan card',
                       bank_Statement='bank statement'
+                      '''
+                      inv_note= 'the next big thing',
+                      balanc_sheet= 'upload file',
+                      fin_details= 'upload file',
+                      inv_pitch= 'upload file'
                       )
 
     db.session.add(t_start1)
 
-    test_user = User(founder_first_name = 'manoj',
-                     founder_last_name = 'bhaiya',
+    test_user = User(founder_first_name = 'Aashay',
+                     founder_last_name = 'Kapoor',
                      phone = 23984738,
-                     email = 'email@email.com',
-                     password = 'ashishj')
+                     email = 'appdeveloper@email.com',
+                     password = 'aashaykap')
 
     db.session.add(test_user)
     db.session.commit()
@@ -75,12 +86,12 @@ def db_seed():
 
 @app.route('/')
 def hello_world():
-    return 'Hello Startups'
+    return 'Hello World!'
 
 
 @app.route('/super_simple')
 def super_simple():
-    return jsonify(message='Hello from the Startup API.'), 200
+    return jsonify(message='Hello from the Investry API.'), 200
 
 
 @app.route('/not_found')
