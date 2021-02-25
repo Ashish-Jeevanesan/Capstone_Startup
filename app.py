@@ -44,7 +44,11 @@ def db_drop():
 
 @app.cli.command('db_seed')
 def db_seed():
+ main
     t_start1 = sDetails(strtup_name='Aria Travel',
+=======
+    t_start1 = iDetails(strtup_name='Aria Travel',
+
                       foundr_name='Aashay',
                       cofoundr_name='Aakarsh',
                       amnt_raised=12365.12,
@@ -53,6 +57,10 @@ def db_seed():
                       eqty_prop=234.23,
                       dt_establish=20092020,
                       approved=True,
+
+=======
+                      '''interested_investing='something',
+ main
                       role='founder','''
                       strtup_logo='image',
                       business_model= 'travel is life',
@@ -64,7 +72,10 @@ def db_seed():
                       Adhar_card_back='adharback',
                       pan='pan card',
                       bank_Statement='bank statement'
+
                       
+=======
+                      '''
                       inv_note= 'the next big thing',
                       balanc_sheet= 'upload file',
                       fin_details= 'upload file',
