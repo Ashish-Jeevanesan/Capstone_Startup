@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy import Column, Integer, String, Float, Boolean
 import os
 from flask_marshmallow import Marshmallow
 '''
@@ -75,12 +75,12 @@ def db_seed():
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return 'Hello Startups'
 
 
 @app.route('/super_simple')
 def super_simple():
-    return jsonify(message='Hello from the Investry API.'), 200
+    return jsonify(message='Hello from the Startup API.'), 200
 
 
 @app.route('/not_found')
